@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Pregunta 3</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>¿Qué tipo de equipamiento interior tiene su edificación?</h2>
+  <ion-list>
+    <ion-item *ngFor="let item of inmuebles">
+      <ion-checkbox slot="start" [(ngModel)]="item.seleccionado"></ion-checkbox>
+      <ion-label>{{ item.nombre }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="calcularPromedio()">Calcular</ion-button>
+</ion-content>

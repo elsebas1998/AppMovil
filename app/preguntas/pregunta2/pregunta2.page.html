@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pregunta 2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Seleccione los materiales internos:</h2>
+  <ion-list>
+    <ion-item *ngFor="let material of calculoService.materialesInternos">
+      <ion-label>{{ material.nombre }}</ion-label>
+      <ion-checkbox
+        slot="end"
+        [(ngModel)]="material.seleccionado">
+      </ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" (click)="siguientePregunta()">Siguiente</ion-button>
+</ion-content>

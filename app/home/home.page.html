@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Calculadora de Promedio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Selecciona las opciones</h2>
+
+  <!-- Materiales Externos -->
+  <h3>¿Cuáles son los materiales principales utilizados en los acabados externos de su edificación? </h3>
+  <ion-list>
+    <ion-item *ngFor="let item of materialesExternos">
+      <ion-checkbox slot="start" [(ngModel)]="item.seleccionado"></ion-checkbox>
+      <ion-label>{{ item.nombre }} </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Materiales Internos -->
+  <h3>¿Cuáles son los materiales principales utilizados en los acabados externos de su edificación? </h3>
+  <ion-list>
+    <ion-item *ngFor="let item of materialesInternos">
+      <ion-checkbox slot="start" [(ngModel)]="item.seleccionado"></ion-checkbox>
+      <ion-label>{{ item.nombre }} </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Inmuebles -->
+  <h3>¿Qué tipo de equipamiento interior tiene su edificación? ionic generate page preguntas/pregunta1</h3>
+  <ion-list>
+    <ion-item *ngFor="let item of inmuebles">
+      <ion-checkbox slot="start" [(ngModel)]="item.seleccionado"></ion-checkbox>
+      <ion-label>{{ item.nombre }} </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botón para calcular -->
+  <ion-button expand="full" (click)="calcularPromedio()">Calcular Promedio</ion-button>
+  <ion-button expand="full" color="medium" (click)="encerarDatos()">Limpiar Datos</ion-button>
+
+
+ <!-- Resultado 
+ <h3 *ngIf="resultadoFinal !== null">El promedio ponderado es: {{ resultadoFinal}}</h3>
+ <h3 *ngIf="mensaje">{{ mensaje }}</h3>
+ -->
+</ion-content>
